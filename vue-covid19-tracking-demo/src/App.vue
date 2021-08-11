@@ -89,9 +89,8 @@ export default {
   },
   async created() {
     // 利用解構的方式取出axios拿到的data
-    let { data } = await axios.get(
-      "https://api.covidtracking.com/v1/us/daily.json"
-    );
+    let { data } = await axios.get("/api");
+    
     console.log(data);
     // 只取最近一個月的資料
     data = data.slice(0, 30);
